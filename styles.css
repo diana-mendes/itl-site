@@ -1,0 +1,214 @@
+:root {
+  --paper: #F5F4EF;
+  --ink: #161514;
+  --ink-soft: #2C2A26;
+  --body: #403D37;
+  --sulphur: #E3A81B;
+  --sulphur-deep: #A9790A;
+  --teal: #15706A;
+  --line: #D9D5CB;
+  --muted: #8C877B;
+  --display: 'Archivo Black', 'Arial Black', system-ui, sans-serif;
+  --sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #2a2926 0%, #3a3936 100%);
+  font-family: var(--sans);
+  color: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.hero {
+  text-align: center;
+  color: #F3F1EA;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sulphur);
+  margin: 0 0 20px;
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-size: 64px;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 20px;
+  display: inline-block;
+}
+
+.wordmark .dot {
+  color: var(--sulphur);
+}
+
+.tagline {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #D8D4C8;
+  margin: 0 0 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.launching-soon {
+  font-family: var(--sans);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--muted);
+}
+
+.status {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(227, 168, 27, 0.2);
+  border-radius: 8px;
+  padding: 40px 30px;
+  margin-top: 40px;
+}
+
+.status h2 {
+  font-family: var(--display);
+  font-size: 32px;
+  text-transform: uppercase;
+  color: var(--sulphur);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.status p {
+  font-size: 14px;
+  color: #D8D4C8;
+  margin: 0 0 20px;
+  line-height: 1.6;
+}
+
+.signup-form {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.signup-form input {
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: #fff;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: var(--sulphur);
+  background: rgba(227, 168, 27, 0.1);
+}
+
+.signup-form input::placeholder {
+  color: var(--muted);
+}
+
+.signup-form button {
+  padding: 14px 24px;
+  background: var(--sulphur);
+  color: var(--ink);
+  border: none;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.signup-form button:hover {
+  background: #f0b62a;
+  transform: translateY(-2px);
+}
+
+.signup-form button:active {
+  transform: translateY(0);
+}
+
+.form-message {
+  font-size: 13px;
+  margin-top: 12px;
+  min-height: 20px;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9a9486;
+}
+
+@media (max-width: 600px) {
+  .wordmark {
+    font-size: 48px;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+
+  .status {
+    padding: 30px 20px;
+  }
+
+  .status h2 {
+    font-size: 24px;
+  }
+
+  .signup-form {
+    flex-direction: column;
+  }
+}
