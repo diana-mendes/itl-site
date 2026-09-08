@@ -6,11 +6,18 @@
   --sulphur: #E3A81B;
   --sulphur-deep: #A9790A;
   --teal: #15706A;
+  --teal-bright: #2A9D94;
   --line: #D9D5CB;
   --muted: #8C877B;
   --display: 'Archivo Black', 'Arial Black', system-ui, sans-serif;
   --sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --text: #F3F1EA;
+  --text-dim: #D8D4C8;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-line: rgba(255, 255, 255, 0.09);
+  --shell: 1080px;
 }
 
 * {
@@ -24,52 +31,611 @@ html, body {
 
 body {
   background: linear-gradient(135deg, #2a2926 0%, #3a3936 100%);
+  background-attachment: fixed;
   font-family: var(--sans);
-  color: var(--body);
+  color: var(--text-dim);
   -webkit-font-smoothing: antialiased;
-}
-
-.container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 20px;
+  min-height: 100vh;
 }
 
-.content {
-  flex: 1;
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  width: 100%;
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: 28px 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 800px;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-.hero {
-  text-align: center;
-  color: #F3F1EA;
+.brand {
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand .dot {
+  color: var(--sulphur);
+}
+
+/* Homepage already shows the wordmark front and centre, so the header
+   logo is redundant there. Hidden with visibility (not display) so the
+   nav sits at the same position as on every other page. */
+.home-header .brand {
+  visibility: hidden;
+}
+
+.site-nav {
+  display: flex;
+  gap: 46px;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+}
+
+.site-nav a.active {
+  color: var(--sulphur);
+  border-bottom-color: var(--sulphur);
+}
+
+/* ---------- Shell ---------- */
+
+.page {
+  flex: 1;
+  width: 100%;
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: 32px 24px 96px;
+}
+
+.page-head {
+  max-width: 720px;
+  margin-bottom: 64px;
 }
 
 .eyebrow {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--sulphur);
   margin: 0 0 20px;
 }
 
+.page-title {
+  font-family: var(--display);
+  font-size: 54px;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 24px;
+}
+
+.lede {
+  font-size: 21px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.lede + .lede {
+  margin-top: 18px;
+}
+
+.lede b,
+.lede strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  margin-bottom: 72px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sulphur);
+  margin: 0 0 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--surface-line);
+}
+
+.prose {
+  max-width: 680px;
+}
+
+.prose p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.prose a {
+  color: var(--sulphur);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(227, 168, 27, 0.35);
+  transition: border-color 0.15s ease;
+}
+
+.prose a:hover {
+  border-bottom-color: var(--sulphur);
+}
+
+.prose a.button,
+.prose a.button:hover {
+  color: var(--ink);
+  border-bottom: none;
+}
+
+/* ---------- Grids & cards ---------- */
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.grid-2 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: 8px;
+  padding: 28px 26px;
+}
+
+.card h3 {
+  font-family: var(--sans);
+  font-size: 19px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.card-tag {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  margin: 0 0 14px;
+}
+
+/* ---------- Numbered problem cards ---------- */
+
+.problem-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 22px;
+}
+
+.problem {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: 8px;
+  padding: 42px 26px 30px;
+}
+
+.problem .badge {
+  position: absolute;
+  top: -20px;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--sulphur);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.problem h3 {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  line-height: 1.45;
+  margin: 0 0 20px;
+}
+
+.bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 13px;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sulphur);
+}
+
+.bullets .qualifier {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* ---------- Callout ---------- */
+
+.callout {
+  border-left: 2px solid var(--teal-bright);
+  background: rgba(42, 157, 148, 0.06);
+  border-radius: 0 8px 8px 0;
+  padding: 24px 26px;
+  max-width: 720px;
+}
+
+.callout p {
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.callout p + p {
+  margin-top: 14px;
+}
+
+/* ---------- Stats ---------- */
+
+.stats {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.stat {
+  border-left: 2px solid var(--sulphur);
+  padding: 4px 0 4px 20px;
+}
+
+.stat .figure {
+  font-family: var(--display);
+  font-size: 38px;
+  line-height: 1.05;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.stat .label {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ---------- Numbered steps ---------- */
+
+.steps {
+  display: grid;
+  gap: 2px;
+  border: 1px solid var(--surface-line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 24px;
+  padding: 26px;
+  background: var(--surface);
+  align-items: start;
+}
+
+.step-num {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--sulphur);
+  padding-top: 3px;
+}
+
+.step h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.step p {
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---------- Team ---------- */
+
+.team-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.member {
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: 8px;
+  padding: 26px;
+}
+
+.member .photo,
+.member .avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 1px solid rgba(227, 168, 27, 0.3);
+  margin-bottom: 18px;
+}
+
+/* Real headshot, shown in full colour. */
+.member .photo {
+  display: block;
+  object-fit: cover;
+  background: rgba(227, 168, 27, 0.08);
+}
+
+/* Initials fallback, for anyone without a headshot on file. */
+.member .avatar {
+  background: rgba(227, 168, 27, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--sulphur);
+}
+
+.member h3 {
+  font-size: 19px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.member .role {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  margin: 0 0 14px;
+}
+
+.member p.bio {
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 2px;
+  border: 1px solid var(--surface-line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.contact-list li {
+  background: var(--surface);
+  padding: 22px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-list .key {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-list .val,
+.contact-list .val a {
+  font-size: 17px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-list .val a:hover {
+  color: var(--sulphur);
+}
+
+/* ---------- Buttons & links ---------- */
+
+.button {
+  display: inline-block;
+  padding: 16px 30px;
+  background: var(--sulphur);
+  color: var(--ink);
+  border: none;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.button:hover {
+  background: #f0b62a;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button-ghost {
+  background: transparent;
+  color: var(--sulphur);
+  border: 1px solid rgba(227, 168, 27, 0.4);
+}
+
+.button-ghost:hover {
+  background: rgba(227, 168, 27, 0.1);
+  color: var(--sulphur);
+}
+
+/* ---------- Contact callout ---------- */
+
+.contact-cta {
+  text-align: center;
+  padding: 56px 32px;
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  border-radius: 8px;
+}
+
+.contact-cta p {
+  font-family: var(--sans);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+.contact-cta a {
+  color: var(--sulphur);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(227, 168, 27, 0.4);
+  transition: border-color 0.15s ease;
+}
+
+.contact-cta a:hover {
+  border-bottom-color: var(--sulphur);
+}
+
+/* ---------- Homepage ---------- */
+
+.home {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: 24px 24px 72px;
+}
+
+.home-inner {
+  width: 100%;
+  text-align: center;
+  color: var(--text);
+}
+
+.home-inner .eyebrow {
+  font-size: 15px;
+  margin-bottom: 26px;
+}
+
 .wordmark {
   font-family: var(--display);
-  font-size: 64px;
+  font-size: 96px;
   line-height: 0.92;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #fff;
-  margin: 0 0 20px;
+  margin: 0 0 28px;
   display: inline-block;
 }
 
@@ -78,137 +644,265 @@ body {
 }
 
 .tagline {
-  font-size: 16px;
+  font-size: 21px;
   line-height: 1.6;
-  color: #D8D4C8;
-  margin: 0 0 40px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  color: var(--text-dim);
+  margin: 0 auto 48px;
+  max-width: 680px;
 }
 
-.launching-soon {
-  font-family: var(--sans);
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin: 0;
-  color: var(--muted);
-}
-
-.status {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(227, 168, 27, 0.2);
-  border-radius: 8px;
-  padding: 40px 30px;
-  margin-top: 40px;
-}
-
-.status h2 {
-  font-family: var(--display);
-  font-size: 32px;
-  text-transform: uppercase;
-  color: var(--sulphur);
-  margin: 0 0 12px;
-  letter-spacing: -0.01em;
-}
-
-.status p {
-  font-size: 14px;
-  color: #D8D4C8;
-  margin: 0 0 20px;
-  line-height: 1.6;
-}
-
-.signup-form {
+.hero-links {
   display: flex;
-  gap: 12px;
-  flex-direction: column;
-  margin-top: 20px;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.signup-form input {
-  padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  font-family: var(--sans);
-  font-size: 14px;
-  color: #fff;
-  transition: border-color 0.2s ease, background 0.2s ease;
+.home-inner .button {
+  padding: 19px 36px;
+  font-size: 15px;
 }
 
-.signup-form input:focus {
-  outline: none;
-  border-color: var(--sulphur);
-  background: rgba(227, 168, 27, 0.1);
+/* ---------- Cleaving cross-links (homepage animation) ----------
+   A polymer network whose sulphur bridges break left-to-right, then
+   re-form. Pure CSS on SVG: each bridge is two halves that translate
+   apart while their colour shifts from sulphur to teal. Children use
+   currentColor, so one animated `color` drives stroke and fill.      */
+
+.cleave {
+  width: 100%;
+  max-width: 940px;
+  margin: 56px auto 24px;
 }
 
-.signup-form input::placeholder {
-  color: var(--muted);
+.cleave svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }
 
-.signup-form button {
-  padding: 14px 24px;
-  background: var(--sulphur);
-  color: var(--ink);
-  border: none;
-  border-radius: 4px;
+.cleave .chain {
+  fill: none;
+  stroke: #6f6a5e;
+  stroke-width: 2.5;
+}
+
+.cleave .half line {
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.cleave .half circle {
+  fill: currentColor;
+}
+
+.cleave .half {
+  color: var(--sulphur);
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: var(--d, 0s);
+}
+
+.cleave .half-top {
+  animation-name: cleave-top;
+}
+
+.cleave .half-bot {
+  animation-name: cleave-bot;
+}
+
+/* --d on each bridge is timed to when the sweep's leading edge (see
+   cleave-sweep below) reaches that bridge's x position, so the snap at
+   0%→6% lands right as the gradient passes over it. */
+@keyframes cleave-top {
+  0%        { transform: translateY(0);      color: #E3A81B; }
+  6%, 74%   { transform: translateY(-7px);   color: #2A9D94; }
+  84%, 100% { transform: translateY(0);      color: #E3A81B; }
+}
+
+@keyframes cleave-bot {
+  0%        { transform: translateY(0);      color: #E3A81B; }
+  6%, 74%   { transform: translateY(7px);    color: #2A9D94; }
+  84%, 100% { transform: translateY(0);      color: #E3A81B; }
+}
+
+/* The solvent front: a soft glow that crosses ahead of the cleaving.
+   Leading edge position = translateX (rect's own x + width cancel to 0),
+   linear so bridge delays above can be computed as simple proportions. */
+.cleave .front {
+  animation: cleave-sweep 7s linear infinite;
+}
+
+@keyframes cleave-sweep {
+  0%        { transform: translateX(0);        opacity: 0; }
+  4%        {                                  opacity: 1; }
+  42%       { transform: translateX(1300px);   opacity: 1; }
+  46%, 100% { transform: translateX(1300px);   opacity: 0; }
+}
+
+.cleave-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 940px;
+  margin: 0 auto 48px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cleave-caption .lhs {
+  color: var(--sulphur);
+}
+
+.cleave-caption .rhs {
+  color: var(--teal-bright);
+}
+
+/* Hold a static mid-reaction state when motion is unwelcome:
+   intact on the left, cleaved on the right, as in the pitch one-pager. */
+@media (prefers-reduced-motion: reduce) {
+  .cleave .half,
+  .cleave .front {
+    animation: none;
+  }
+
+  .cleave .front {
+    opacity: 0;
+  }
+
+  .cleave .bridges > .bridge:nth-child(n+6) .half-top {
+    transform: translateY(-7px);
+    color: #2A9D94;
+  }
+
+  .cleave .bridges > .bridge:nth-child(n+6) .half-bot {
+    transform: translateY(7px);
+    color: #2A9D94;
+  }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  width: 100%;
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: 28px 24px 32px;
+  border-top: 1px solid var(--surface-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
   font-family: var(--mono);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: transform 0.12s ease, background 0.12s ease;
-}
-
-.signup-form button:hover {
-  background: #f0b62a;
-  transform: translateY(-2px);
-}
-
-.signup-form button:active {
-  transform: translateY(0);
-}
-
-.form-message {
-  font-size: 13px;
-  margin-top: 12px;
-  min-height: 20px;
-  color: var(--teal);
-  font-weight: 500;
-}
-
-.footer {
-  text-align: center;
-  padding: 20px;
-  font-family: var(--mono);
-  font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #9a9486;
 }
 
-@media (max-width: 600px) {
+.site-footer a {
+  color: #9a9486;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--sulphur);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Footer on the landing page sits centred, like the original */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9a9486;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .site-header {
+    padding: 22px 20px;
+    gap: 16px;
+  }
+
+  .site-nav {
+    gap: 28px;
+  }
+
+  .page {
+    padding: 16px 20px 72px;
+  }
+
+  .page-head {
+    margin-bottom: 48px;
+  }
+
+  .page-title {
+    font-size: 40px;
+  }
+
+  .lede {
+    font-size: 18px;
+  }
+
+  .section {
+    margin-bottom: 56px;
+  }
+
+  .step {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
   .wordmark {
-    font-size: 48px;
+    font-size: 62px;
   }
 
   .tagline {
+    font-size: 18px;
+  }
+
+  .cleave {
+    margin-top: 40px;
+  }
+
+  /* Two end-labels would collide at this width — stack and centre them. */
+  .cleave-caption {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .home-inner .button {
+    padding: 16px 30px;
     font-size: 14px;
   }
 
-  .status {
-    padding: 30px 20px;
+  .site-footer {
+    justify-content: center;
+    text-align: center;
   }
 
-  .status h2 {
-    font-size: 24px;
+  .contact-cta {
+    padding: 40px 24px;
   }
 
-  .signup-form {
-    flex-direction: column;
+  .contact-cta p {
+    font-size: 21px;
   }
 }
