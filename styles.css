@@ -56,7 +56,7 @@ body {
 
 .brand {
   font-family: var(--display);
-  font-size: 18px;
+  font-size: 22px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: #fff;
@@ -77,15 +77,15 @@ body {
 
 .site-nav {
   display: flex;
-  gap: 28px;
+  gap: 46px;
   flex-wrap: wrap;
 }
 
 .site-nav a {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--muted);
   text-decoration: none;
@@ -120,9 +120,9 @@ body {
 
 .eyebrow {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--sulphur);
   margin: 0 0 20px;
@@ -130,7 +130,7 @@ body {
 
 .page-title {
   font-family: var(--display);
-  font-size: 46px;
+  font-size: 54px;
   line-height: 1.02;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -139,7 +139,7 @@ body {
 }
 
 .lede {
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1.65;
   color: var(--text-dim);
   margin: 0;
@@ -167,9 +167,9 @@ body {
 
 .section-title {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--sulphur);
   margin: 0 0 28px;
@@ -182,7 +182,7 @@ body {
 }
 
 .prose p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   margin: 0 0 20px;
 }
@@ -236,7 +236,7 @@ body {
 
 .card h3 {
   font-family: var(--sans);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   color: #fff;
   margin: 0 0 12px;
@@ -244,14 +244,14 @@ body {
 }
 
 .card p {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.65;
   margin: 0;
 }
 
 .card-tag {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--teal-bright);
@@ -279,13 +279,13 @@ body {
   position: absolute;
   top: -20px;
   left: 24px;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: var(--sulphur);
   color: var(--ink);
   font-family: var(--display);
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -294,7 +294,7 @@ body {
 
 .problem h3 {
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -314,7 +314,7 @@ body {
 .bullets li {
   position: relative;
   padding-left: 18px;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.55;
 }
 
@@ -331,7 +331,7 @@ body {
 
 .bullets .qualifier {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
   margin-top: 3px;
 }
@@ -347,7 +347,7 @@ body {
 }
 
 .callout p {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.65;
   margin: 0;
 }
@@ -371,7 +371,7 @@ body {
 
 .stat .figure {
   font-family: var(--display);
-  font-size: 34px;
+  font-size: 38px;
   line-height: 1.05;
   color: #fff;
   margin: 0 0 10px;
@@ -379,7 +379,7 @@ body {
 }
 
 .stat .label {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.55;
   color: var(--muted);
   margin: 0;
@@ -406,7 +406,7 @@ body {
 
 .step-num {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: var(--sulphur);
@@ -414,14 +414,14 @@ body {
 }
 
 .step h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #fff;
   margin: 0 0 8px;
 }
 
 .step p {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.65;
   margin: 0;
 }
@@ -464,14 +464,14 @@ body {
   align-items: center;
   justify-content: center;
   font-family: var(--mono);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--sulphur);
 }
 
 .member h3 {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   color: #fff;
   margin: 0 0 6px;
@@ -479,7 +479,7 @@ body {
 
 .member .role {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--teal-bright);
@@ -487,7 +487,7 @@ body {
 }
 
 .member p.bio {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.6;
   margin: 0;
 }
@@ -517,7 +517,7 @@ body {
 
 .contact-list .key {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--muted);
@@ -525,7 +525,7 @@ body {
 
 .contact-list .val,
 .contact-list .val a {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--text);
   text-decoration: none;
 }
@@ -538,13 +538,13 @@ body {
 
 .button {
   display: inline-block;
-  padding: 14px 26px;
+  padding: 16px 30px;
   background: var(--sulphur);
   color: var(--ink);
   border: none;
   border-radius: 4px;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -573,75 +573,35 @@ body {
   color: var(--sulphur);
 }
 
-/* ---------- Form ---------- */
+/* ---------- Contact callout ---------- */
 
-.form {
-  display: grid;
-  gap: 16px;
-  max-width: 560px;
-}
-
-.field {
-  display: grid;
-  gap: 8px;
-}
-
-.field label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.field input,
-.field textarea {
-  padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.06);
+.contact-cta {
+  text-align: center;
+  padding: 56px 32px;
+  background: var(--surface);
   border: 1px solid var(--surface-line);
-  border-radius: 4px;
+  border-radius: 8px;
+}
+
+.contact-cta p {
   font-family: var(--sans);
-  font-size: 15px;
-  color: #fff;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 auto;
+  max-width: 640px;
 }
 
-.field textarea {
-  min-height: 140px;
-  resize: vertical;
-}
-
-.field input:focus,
-.field textarea:focus {
-  outline: none;
-  border-color: var(--sulphur);
-  background: rgba(227, 168, 27, 0.08);
-}
-
-.field input::placeholder,
-.field textarea::placeholder {
-  color: #6f6a5f;
-}
-
-.form .button {
-  justify-self: start;
-}
-
-.form-note {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin: 20px 0 0;
-  max-width: 560px;
-}
-
-.form-note a {
+.contact-cta a {
   color: var(--sulphur);
   text-decoration: none;
+  border-bottom: 1px solid rgba(227, 168, 27, 0.4);
+  transition: border-color 0.15s ease;
 }
 
-.form-note a:hover {
-  text-decoration: underline;
+.contact-cta a:hover {
+  border-bottom-color: var(--sulphur);
 }
 
 /* ---------- Homepage ---------- */
@@ -664,13 +624,13 @@ body {
 }
 
 .home-inner .eyebrow {
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 26px;
 }
 
 .wordmark {
   font-family: var(--display);
-  font-size: 88px;
+  font-size: 96px;
   line-height: 0.92;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -684,7 +644,7 @@ body {
 }
 
 .tagline {
-  font-size: 19px;
+  font-size: 21px;
   line-height: 1.6;
   color: var(--text-dim);
   margin: 0 auto 48px;
@@ -699,8 +659,8 @@ body {
 }
 
 .home-inner .button {
-  padding: 18px 34px;
-  font-size: 14px;
+  padding: 19px 36px;
+  font-size: 15px;
 }
 
 /* ---------- Cleaving cross-links (homepage animation) ----------
@@ -790,7 +750,7 @@ body {
   max-width: 940px;
   margin: 0 auto 48px;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -840,7 +800,7 @@ body {
   gap: 16px;
   flex-wrap: wrap;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #9a9486;
@@ -864,7 +824,7 @@ body {
   text-align: center;
   padding: 20px;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #9a9486;
@@ -879,7 +839,7 @@ body {
   }
 
   .site-nav {
-    gap: 18px;
+    gap: 28px;
   }
 
   .page {
@@ -891,11 +851,11 @@ body {
   }
 
   .page-title {
-    font-size: 34px;
+    font-size: 40px;
   }
 
   .lede {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .section {
@@ -908,11 +868,11 @@ body {
   }
 
   .wordmark {
-    font-size: 56px;
+    font-size: 62px;
   }
 
   .tagline {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .cleave {
@@ -924,17 +884,25 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 6px;
-    font-size: 11px;
-    letter-spacing: 0.1em;
+    font-size: 12px;
+    letter-spacing: 0.08em;
   }
 
   .home-inner .button {
-    padding: 15px 28px;
-    font-size: 13px;
+    padding: 16px 30px;
+    font-size: 14px;
   }
 
   .site-footer {
     justify-content: center;
     text-align: center;
+  }
+
+  .contact-cta {
+    padding: 40px 24px;
+  }
+
+  .contact-cta p {
+    font-size: 21px;
   }
 }
